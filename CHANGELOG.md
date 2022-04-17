@@ -7,6 +7,9 @@ and Shahabix adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 - Nothing much yet.
 
+## [0.1.2] - 2022-04-17
+- Added icon.
+
 ## [0.1.1] - 2022-04-17
 - Added LICENSE file.
 
