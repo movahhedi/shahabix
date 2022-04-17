@@ -1,0 +1,159 @@
+{
+	"name": "shahabix",
+	"displayName": "Shahabix",
+	"description": "A set of useful features for VSCode.",
+	"version": "0.1.0",
+	"publisher": "movahhedi",
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"author": {
+		"name": "Shahab Movahhedi",
+		"email": "dev@shmovahhedi.com",
+		"url": "https://shmovahhedi.com"
+	},
+	"extensionKind": [
+		"ui"
+	],
+	"galleryBanner": {
+		"color": "#007fff",
+		"theme": "dark"
+	},
+	"bugs": {
+		"url": "https://github.com/movahhedi/shahabix/issues"
+	},
+	"homepage": "https://github.com/movahhedi/shahabix",
+	"icon": "",
+	"repository": {
+		"url": "https://github.com/movahhedi/shahabix"
+	},
+	"keywords": [
+		"movahhedi",
+		"shahabix",
+		"path",
+		"file",
+		"reveal"
+	],
+	"markdown": "github",
+	"activationEvents": [
+		"onStartupFinished",
+		"workspaceContains:*.*",
+		"onCommand:shahabix.revealFile",
+		"onCommand:shahabix.revealRootFolder"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "shahabix.revealFile",
+				"title": "Reveal File in Folder",
+				"shortTitle": "Reveal File",
+				"icon": "$(file-symlink-file)"
+			},
+			{
+				"command": "shahabix.revealRootFolder",
+				"title": "Reveal Root Folder",
+				"icon": "$(file-symlink-directory)"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "shahabix.revealFile",
+					"when": "config.shahabix.reveal.file.showInContextMenu && resourceScheme == file",
+					"group": "navigation"
+				},
+				{
+					"command": "shahabix.revealRootFolder",
+					"when": "config.shahabix.reveal.root.showInContextMenu && workbenchState == folder && resourceScheme == file",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "shahabix.revealFile",
+					"when": "config.shahabix.reveal.file.showInTitle && resourceScheme == file",
+					"group": "navigation"
+				}
+			],
+			"view/title": [
+				{
+					"command": "shahabix.revealFile",
+					"when": "config.shahabix.reveal.file.showInExplorerTitle && resourceScheme == file",
+					"group": "navigation"
+				},
+				{
+					"command": "shahabix.revealRootFolder",
+					"when": "config.shahabix.reveal.root.showInExplorerTitle && workbenchState == folder && resourceScheme == file",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "Shahabix",
+				"properties": {
+					"shahabix.statusBar.enableShowPath": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show file path in statusbar."
+					},
+					"shahabix.statusBar.showFullPath": {
+						"type": "boolean",
+						"default": false,
+						"description": "Whether or not to show full path in statusbar. If not, shows the path relative to the root folder."
+					},
+					"shahabix.reveal.file.showInContextMenu": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show the 'Reveal file in folder' option on right-click."
+					},
+					"shahabix.reveal.file.showInTitle": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show the 'Reveal file in folder' button in the editor title bar."
+					},
+					"shahabix.reveal.file.showInExplorerTitle": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show the 'Reveal file in folder' button in the explorer title bar."
+					},
+					"shahabix.reveal.root.showInContextMenu": {
+						"type": "boolean",
+						"default": false,
+						"description": "Show the 'Reveal root folder' option on right-click."
+					},
+					"shahabix.reveal.root.showInExplorerTitle": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show the 'Reveal root folder' button in the explorer title bar."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.20.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.16.0",
+		"@typescript-eslint/parser": "^5.16.0",
+		"eslint": "^8.11.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.2",
+		"typescript": "^4.5.5",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
