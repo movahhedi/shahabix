@@ -2,7 +2,7 @@
 	"name": "shahabix",
 	"displayName": "Shahabix",
 	"description": "A set of useful features for VSCode.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "movahhedi",
 	"engines": {
 		"vscode": "^1.20.0"

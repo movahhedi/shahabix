@@ -23,6 +23,7 @@ Shahabix contributes the following settings:
 
 ## Release Notes
 
-### 0.1.0
+### 0.1.1
 - Initial release of Shahabix.
 - Added Reveal options for the active file and workspace root folder.
+- Added LICENSE file.
