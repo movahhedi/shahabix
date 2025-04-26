@@ -39,6 +39,8 @@
 	],
 	"markdown": "github",
 	"activationEvents": [
+		"onDebug",
+		"onLanguage:markdown",
 		"onStartupFinished",
 		"workspaceContains:*.*",
 		"onCommand:shahabix.revealFile",
@@ -133,6 +135,9 @@
 					}
 				}
 			}
+		],
+		"markdown.previewStyles": [
+			"./markdown-preview.css"
 		]
 	},
 	"scripts": {
